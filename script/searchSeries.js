@@ -30,10 +30,27 @@ $('#search').click(function() {
                   <td>${series.show.runtime} min</td>
                   <td>${series.show.summary}</td>
                   <td>
-                    <a id="add" class="btn btn-sm btn-primary">+ Watchlist</a>
+                  <button id="add-to-watchlist-${series.show.id}" class="btn btn-sm btn-primary"> + Watchlist</button>
                   </td>
                 </tr>
                 `)
+                $(`#add-to-watchlist-${series.show.id}`).click(function() {
+                    // console.log(series)
+                  axios.post('http://localhost:3000/user/add-series',
+                    obj = {
+                      series: series.show,
+                      movieId: series.show.id,
+                    }
+                  )
+                  .then(function(response) {
+                    console.log(response)
+                    console.log('add response');
+                  })
+                  .catch(function(error) {
+                    console.log('error response', error.message);
+                  })
+                })
+
             });
         },
         error: function(err) {
@@ -42,11 +59,5 @@ $('#search').click(function() {
         }
     })
 
-    document.querySelector('#add').on('click', function() {
-        $ajax({
-            url: 'http://localhost:3000/addWatchList',
-
-        })
-    })
 
 }) 
