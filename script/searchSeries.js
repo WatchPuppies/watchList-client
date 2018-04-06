@@ -18,19 +18,19 @@ $('#search').click(function() {
                 if(series.show.image == null){
                     image = 'no images'
                 } else {
-                    image = `<img src="${series.show.image.medium}"/>`
+                    image = `<img style="width:90px" src="${series.show.image.medium}"/>`
                 }
                 $('#result').append(`
                 <tr>
                   <td>${image}</td>
                   <td>${series.show.name}</td>
                   <td>Series</td>
-                  <td style="width:100px;">${series.show.genres}</td>
+                  <td>${series.show.genres.join(', ')}</td>
                   <td>${series.show.rating.average}</td>
                   <td>${series.show.runtime} min</td>
                   <td>${series.show.summary}</td>
                   <td>
-                    <a class="btn btn-sm btn-primary" href="#">Add Playlist</a>
+                    <a id="add" class="btn btn-sm btn-primary">+ Watchlist</a>
                   </td>
                 </tr>
                 `)
@@ -42,4 +42,11 @@ $('#search').click(function() {
         }
     })
 
-})
+    document.querySelector('#add').on('click', function() {
+        $ajax({
+            url: 'http://localhost:3000/addWatchList',
+
+        })
+    })
+
+}) 
