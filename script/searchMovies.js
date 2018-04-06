@@ -35,14 +35,21 @@ $('#search').click(function() {
         </tr>
         `)
 
+        let userData = {
+          _id: localStorage.getItem('userId'),
+          name: localStorage.getItem('name')
+        }
+
         $(`#add-to-watchlist-${movie.id}`).click(function() {
           axios.post('http://localhost:3000/user/add-movie',
             obj = {
               movieId: movie.id,
+              userData: userData
             }
           )
           .then(function(response) {
             console.log('add response');
+            window.location.href = `home.html`
           })
           .catch(function(error) {
             console.log('error response', error.message);

@@ -6,6 +6,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
         <link rel="stylesheet" href="./css/style.css">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.18.0/axios.js"></script>
     </head>
     <body>
         <nav class="navbar navbar-light bg-light justify-content-between">
@@ -65,11 +66,12 @@
                         <th>Title</th>
                         <th>Category</th>
                         <th>Sinopsis</th>
+                        <th>Status</th>
                         <th>Action</th>
                     </tr>
                 </thead>
-                <tbody>
-                    <tr>
+                <tbody id="watchlist">
+                    <!-- <tr>
                         <td>
                             <img style="width:80px;" src="./images/img_avatar.png" class="rounded" alt="Cinque Terre">
                         </td>
@@ -84,7 +86,7 @@
                             <a class="btn btn-sm btn-warning" href="#">Detail</a>
                             <a class="btn btn-sm btn-danger" href="#">Delete</a>
                         </td>
-                    </tr>
+                    </tr> -->
                 </tbody>
             </table>
         </div>
@@ -97,5 +99,6 @@
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
         <script src="./script/fblogin.js"></script>
         <script src="./script/home.js"></script>
+        <script src="./script/showWatchlist.js"></script>
     </body>
 </html>
