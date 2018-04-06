@@ -1,0 +1,18 @@
+body{
+  background-image: url("../images/popcorn.jpg");
+  background-repeat: no-repeat;
+  background-size: 100%;
+}
+
+.container {
+  margin-top: 200px;
+}
+
+.fb-login-button{
+  margin-top: 20px;
+  margin-left: 400px;
+}
+
+#maintext {
+  margin-left: 200px;
+}
