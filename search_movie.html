@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <title>Bootstrap 4 Example</title>
+        <title>WatchList!</title>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
@@ -10,6 +10,7 @@
             src="https://code.jquery.com/jquery-3.3.1.js"
             integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
             crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.18.0/axios.js"></script>
     </head>
     <body>
         
@@ -32,11 +33,11 @@
                 <table class="table table-dark table-hover">
                     <thead>
                         <tr>
+                            <th>Poster</th>
                             <th>Title</th>
                             <th>Category</th>
                             <th>Genre</th>
                             <th>Rating</th>
-                            <th>Duration</th>
                             <th>Description</th>
                             <th>Action</th>
                         </tr>
@@ -48,7 +49,8 @@
             </div>
         </div>
         
-        <script src="./script/searchShow.js"></script>
+        <script src="./script/searchMovies.js"></script>
+        <script src="./script/addMovies.js"></script>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
