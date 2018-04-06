@@ -32,10 +32,13 @@ function statusChangeCallback(response) {
       console.log("res server", resLogin)
       localStorage.setItem("token",resLogin.data.user.token)
       localStorage.setItem("userId", resLogin.data.user._id)
-      window.location.href="profile.html"
+      localStorage.setItem('picture', resLogin.data.user.picture)
+      localStorage.setItem('name', resLogin.data.user.name)
+      window.location.href="home.html"
     })
   }else{
     console.log('not log in')
+    window.location.href ="index.html"
   }
 }
 
@@ -47,11 +50,14 @@ function checkLoginState() {
 }
 
 function logOutButton(){
-  // FB.logout(function(response){
-  //   statusChangeCallback(response)
-  // })
+  alert("you are will be log out?")
+  FB.logout(function(response){
+    statusChangeCallback(response)
+  })
   localStorage.removeItem("token")
   localStorage.removeItem("userId")
+  localStorage.removeItem("picture")
+  localStorage.removeItem("name")
   window.location.href="index.html"
   
 }
