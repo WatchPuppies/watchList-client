@@ -8,7 +8,12 @@
         <link rel="stylesheet" href="./css/style.css">
     </head>
     <body>
-        
+        <nav class="navbar navbar-light bg-light justify-content-between">
+            <a href="home.html" class="navbar-brand">Watch Puppies</a>
+            <form class="form-inline" action="/index.html">
+              <button class="btn btn-outline-success my-2 my-sm-0" type="submit" onclick="logOutButton()">Log Out</button>
+            </form>
+          </nav>
         <div class="bg-image">
             <img style="position: absolute; width:100%; z-index:-99;" src="./images/avatar.jpg">
         </div>
@@ -21,7 +26,7 @@
             <div class="row">
                 <div class="col-lg-12 profile-box">
                     <div class="avatar-circle">
-                        <img src="./images/img_avatar.png">
+                        <img id="imgsrc" src="./images/img_avatar.png">
                     </div>
                     <h2 id="name">Yohanes Sahrul</h2>
                 </div>
@@ -76,9 +81,14 @@
                 </table>
             </div>
         </div>
-        
+        <script
+            src="https://code.jquery.com/jquery-3.3.1.min.js"
+            integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+            crossorigin="anonymous"></script>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+        <script src="./script/fblogin.js"></script>
+        <script src="./script/home.js"></script>
     </body>
 </html>
