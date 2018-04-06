@@ -1,14 +1,13 @@
 $('#search').click(function() {
   let query = $('#query').val()
 
-  console.log(query)
+  $('#result').load('category.html #result')
+
   $.ajax({
     url: `http://localhost:3000/show/search/movies/${query}`,
     method: "GET",
     dataType: "JSON",
-    success: function(result) {
-      console.log(result);  
-      
+    success: function(result) {      
       result.forEach(movie => {
         $('#result').append(`
         <tr>
@@ -18,6 +17,9 @@ $('#search').click(function() {
           <td>${movie.vote_average}</td>
           <td>runtime</td>
           <td>${movie.overview}</td>
+          <td>
+            <a class="btn btn-sm btn-primary" href="#">Add Playlist</a>
+          </td>
         </tr>
         `)
       })
